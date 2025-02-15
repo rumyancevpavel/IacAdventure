@@ -785,11 +785,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1652469913 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8002264680419333305, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-  m_PrefabInstance: {fileID: 1762682258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1762682258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,6 +793,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 840550092334486282, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -850,6 +849,14 @@ PrefabInstance:
       propertyPath: GroundLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6454987353967731691, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.765
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454987353967731691, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -858,6 +865,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1762682266}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+--- !u!4 &1762682259 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3813177350786363901, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1762682266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,9 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f40e020ba54be2aa9d46a997656c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastOrigin: {fileID: 1652469913}
-  _raycastRadius: 1.5
-  _raycastDistance: 1.5
+  _raycastCube: {fileID: 1762682259}
+  _raycastCubeMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _raycastHalfExtents: {x: 1, y: 1, z: 1.94}
+  _raycastDistance: 0.91
   _raycastLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -954,6 +967,7 @@ GameObject:
   - component: {fileID: 1891166507}
   - component: {fileID: 1891166506}
   - component: {fileID: 1891166505}
+  - component: {fileID: 1891166510}
   m_Layer: 6
   m_Name: Cube-1
   m_TagString: Untagged
@@ -973,6 +987,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7291e8400a0c4a329910a9fcdc99216c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onTouched:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891166510}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
+        m_MethodName: Highlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onTouchReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891166510}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
+        m_MethodName: ClearHighlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1891166506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1062,6 +1106,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891166510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891166504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 3
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  _isSelected: 0
 --- !u!1 &2114283753834967212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1290,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87247872013694825, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1678179932331761816, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
