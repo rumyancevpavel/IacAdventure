@@ -3,15 +3,18 @@ using UnityEngine.Events;
 
 namespace IacAdventure.Gameplay.Interactions
 {
-	public class InteractionRaycastReceiver : MonoBehaviour
+	public class Interacrtable : MonoBehaviour
 	{
 		#region Fields
 
 		[SerializeField]
-		private UnityEvent _onTouched;
+		private UnityEvent _onHighlight;
 
 		[SerializeField]
-		private UnityEvent _onTouchReleased;
+		private UnityEvent _onClearHighlight;
+
+		[SerializeField]
+		private UnityEvent _onInteract;
 		
 		private bool _isTouched;
 		
@@ -19,23 +22,28 @@ namespace IacAdventure.Gameplay.Interactions
 		
 		#region Methods
 
-		public void SetTouched()
+		public void SetHighlighted()
 		{
 			if (_isTouched)
 			{
 				return;
 			}
 			_isTouched = true;
-			_onTouched.Invoke();
+			_onHighlight.Invoke();
 		}
 
-		public void ClearTouched()
+		public void ClearHighlighted()
 		{
 			if (_isTouched)
 			{
 				_isTouched = false;
-				_onTouchReleased.Invoke();
+				_onClearHighlight.Invoke();
 			}
+		}
+
+		public void Interact()
+		{
+			_onInteract?.Invoke();
 		}
 
 		#endregion

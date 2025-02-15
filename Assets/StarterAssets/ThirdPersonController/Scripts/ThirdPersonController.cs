@@ -1,4 +1,6 @@
 ﻿ using UnityEngine;
+ using UnityEngine.Events;
+ using UnityEngine.Serialization;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -75,6 +77,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [FormerlySerializedAs("OnInteractionRequested")] [Tooltip("Raise when interaction requested")]
+        public UnityEvent InteractionRequested;
+        
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -310,6 +315,13 @@ namespace StarterAssets
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
+                }
+
+                // Interacted
+                if (_input.interactionRequested)
+                {
+                    InteractionRequested.Invoke();
+                    _input.interactionRequested = false;
                 }
 
                 // jump timeout

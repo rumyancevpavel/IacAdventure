@@ -797,6 +797,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3813177350786363901, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813177350786363901, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.615
+      objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -870,6 +878,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3813177350786363901, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762682262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469202820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1762682266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,11 +903,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _raycastCube: {fileID: 1762682259}
   _raycastCubeMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  _raycastHalfExtents: {x: 1, y: 1, z: 1.94}
-  _raycastDistance: 0.91
   _raycastLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  _characterController: {fileID: 1762682262}
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7291e8400a0c4a329910a9fcdc99216c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTouched:
+  _onHighlight:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1891166510}
@@ -1002,7 +1020,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onTouchReleased:
+  _onClearHighlight:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1891166510}
