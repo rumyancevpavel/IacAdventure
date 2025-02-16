@@ -22,7 +22,7 @@ namespace IacAdventure.Gameplay.Items
 
 		public void PutIntoInventory()
 		{
-			Debug.Log("Put into inventory");
+			Debug.Log($"[TreasureCube] PutIntoInventory(). Gold={_goldAmount}, Gems={_gemsAmount}, Experience={_experiencePoints}");
 			GameInventory.AddGold(_goldAmount);
 			GameInventory.AddExperience(_experiencePoints);
 			GameInventory.AddGems(_gemsAmount);
