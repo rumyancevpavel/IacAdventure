@@ -50,8 +50,7 @@ namespace StarterAssets
 			Interacted(value.isPressed);
 		}
 #endif
-
-
+		
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;

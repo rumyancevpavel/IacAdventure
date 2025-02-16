@@ -77,9 +77,6 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
-        [FormerlySerializedAs("OnInteractionRequested")] [Tooltip("Raise when interaction requested")]
-        public UnityEvent InteractionRequested;
-        
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -317,13 +314,9 @@ namespace StarterAssets
                     }
                 }
 
+                // TODO: [Add interaction requested]
                 // Interacted
-                if (_input.interactionRequested)
-                {
-                    InteractionRequested.Invoke();
-                    _input.interactionRequested = false;
-                }
-
+                
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)
                 {

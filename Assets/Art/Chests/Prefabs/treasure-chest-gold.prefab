@@ -65,16 +65,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1631731930273005441}
-    - targetCorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4650422991183009205}
-    - targetCorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4132895845903121049}
-    - targetCorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8525554016745450135}
     - targetCorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8050475010426303066}
@@ -84,64 +75,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1496087725447764, guid: 1fbe49dcde4d34cc3905aebf9a198601, type: 3}
   m_PrefabInstance: {fileID: 3589757500138565178}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1631731930273005441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590549513302979694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7291e8400a0c4a329910a9fcdc99216c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onHighlight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4650422991183009205}
-        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
-        m_MethodName: Highlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onClearHighlight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4650422991183009205}
-        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
-        m_MethodName: ClearHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8525554016745450135}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Items.TreasureGoldChest,
-          Assembly-CSharp
-        m_MethodName: Collect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4650422991183009205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,46 +87,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 3
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
   _isSelected: 0
---- !u!111 &4132895845903121049
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590549513302979694}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 1654ab7a7f7144c4584286a91a40b39c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1654ab7a7f7144c4584286a91a40b39c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
---- !u!114 &8525554016745450135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590549513302979694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2be4a2ea2e44ec9450320758788f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _experiencePoints: 15
-  _goldAmount: 100
-  _gemsAmount: 15
-  _openLidAnimation: {fileID: 4132895845903121049}
 --- !u!65 &8050475010426303066
 BoxCollider:
   m_ObjectHideFlags: 0

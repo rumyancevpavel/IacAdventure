@@ -21,26 +21,12 @@ namespace IacAdventure.Gameplay.Interactions
 
 		private Interacrtable _currentInteractable;
 
-		private bool _isHitDetected;
-
-		private RaycastHit _lastHit;
-		
 		#endregion
 		
 		#region Methods
 
 		private void Awake()
 		{
-			_characterController.InteractionRequested.AddListener(OnInteractionRequested);
-		}
-
-		private void OnInteractionRequested()
-		{
-			if (_currentInteractable == null)
-			{
-				return;
-			}
-			_currentInteractable.Interact();
 		}
 
 		private void Update()
@@ -50,16 +36,6 @@ namespace IacAdventure.Gameplay.Interactions
 
 		private void DetectInteraction()
 		{
-			var overlaps = Physics.OverlapBox(_raycastCube.position, _raycastCube.localScale * 0.5f, _raycastCube.rotation, _raycastLayerMask);
-			if (overlaps == null || overlaps.Length == 0)
-			{
-				ClearCurrentHighlight();
-			}
-			else
-			{
-				var firstOverlap = overlaps[0];
-				SetCurrentHighlight(firstOverlap);
-			}
 		}
 
 		private void SetCurrentHighlight(Collider collider)
@@ -78,14 +54,6 @@ namespace IacAdventure.Gameplay.Interactions
 				_currentInteractable.ClearHighlighted();
 				_currentInteractable = null;
 			}
-		}
-
-#if UNITY_EDITOR
-		private void OnDrawGizmos()
-		{
-			Gizmos.color = Color.red;
-			Gizmos.DrawWireMesh(_raycastCubeMesh, _raycastCube.position, _raycastCube.rotation, _raycastCube.localScale);
-#endif
 		}
 
 		#endregion

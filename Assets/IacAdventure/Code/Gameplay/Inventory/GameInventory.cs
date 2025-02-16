@@ -6,6 +6,7 @@ namespace IacAdventure.Gameplay.Inventory
 		public static int GemsAmount { get; private set; }
 		public static int ExperienceAmount { get; private set; }
 
+		
 		public static void AddGold(int amount)
 		{
 			GoldAmount += amount;
