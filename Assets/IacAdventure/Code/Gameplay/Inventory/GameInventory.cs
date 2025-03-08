@@ -1,24 +1,111 @@
+using UnityEngine;
+
 namespace IacAdventure.Gameplay.Inventory
 {
-	public class GameInventory
+	public class GameInventory : MonoBehaviour
 	{
-		public static int GoldAmount { get; private set; }
-		public static int GemsAmount { get; private set; }
-		public static int ExperienceAmount { get; private set; }
+		#region Singleton
 
-		public static void AddGold(int amount)
+		private static GameInventory _instance;
+
+		public static GameInventory Instance
 		{
-			GoldAmount += amount;
+			get
+			{
+				return _instance;
+			}
 		}
 
-		public static void AddExperience(int amount)
+		#endregion
+
+		#region Editor Exposed
+
+		[SerializeField] private GameInventorySlot[] _slots;
+
+		#endregion
+		
+		#region Methods
+
+		private void Awake()
 		{
-			ExperienceAmount += amount;
+			if (_instance != null && _instance != this)
+			{
+				Destroy(gameObject);
+				Debug.LogError("Detected attempt to duplicate instantiation of [GameInventory]");
+				return;
+			}
+			_instance = this;
 		}
 
-		public static void AddGems(int amount)
+		public void PutItem(InventoryItemType itemType)
 		{
-			GemsAmount += amount;
+			if (HasEmptySlot())
+			{
+				var slot = GetEmptySlot();
+				slot.PutItem(itemType);
+			}
 		}
+
+		public bool HasItem(InventoryItemType itemType)
+		{
+			foreach (var slot in _slots)
+			{
+				if (slot.ItemType == itemType)
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		public void UseItem(InventoryItemType itemType)
+		{
+			var slot = GetSlotByItem(itemType);
+			if (slot != null)
+			{
+				slot.Use();
+			}
+		}
+
+		private bool HasEmptySlot()
+		{
+			foreach (var slot in _slots)
+			{
+				if (slot.IsEmpty())
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private GameInventorySlot GetEmptySlot()
+		{
+			foreach (var slot in _slots)
+			{
+				if (slot.IsEmpty())
+				{
+					return slot;
+				}
+			}
+
+			return null;
+		}
+
+		private GameInventorySlot GetSlotByItem(InventoryItemType itemType)
+		{
+			foreach (var slot in _slots)
+			{
+				if (slot.ItemType == itemType)
+				{
+					return slot;
+				}
+			}
+
+			return null;
+		}
+		
+		#endregion
 	}
 }
