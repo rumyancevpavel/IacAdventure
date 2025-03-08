@@ -98,13 +98,7 @@ PrefabInstance:
       addedObject: {fileID: 4355454144965796503}
     - targetCorrespondingSourceObject: {fileID: 1265803993966126, guid: 77d54b7dafce7415b9406ca06fa75ef1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 970134017936399489}
-    - targetCorrespondingSourceObject: {fileID: 1265803993966126, guid: 77d54b7dafce7415b9406ca06fa75ef1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2892239813421251482}
-    - targetCorrespondingSourceObject: {fileID: 1265803993966126, guid: 77d54b7dafce7415b9406ca06fa75ef1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4701591102390238690}
   m_SourcePrefab: {fileID: 100100000, guid: 77d54b7dafce7415b9406ca06fa75ef1, type: 3}
 --- !u!1 &4561042334173386203 stripped
 GameObject:
@@ -149,64 +143,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &970134017936399489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561042334173386203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7291e8400a0c4a329910a9fcdc99216c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onHighlight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2892239813421251482}
-        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
-        m_MethodName: Highlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onClearHighlight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2892239813421251482}
-        m_TargetAssemblyTypeName: Outline, Assembly-CSharp-firstpass
-        m_MethodName: ClearHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4701591102390238690}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Items.TreasureChestWood,
-          Assembly-CSharp
-        m_MethodName: Interact
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2892239813421251482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,19 +162,3 @@ MonoBehaviour:
   bakeKeys: []
   bakeValues: []
   _isSelected: 0
---- !u!114 &4701591102390238690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561042334173386203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e879da00884e55b511e32448d231b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isLocked: 1
-  _lockedBy: 4
-  _itemToGive: 3
-  _openAnimation: {fileID: 4355454144965796503}

@@ -9,8 +9,6 @@ namespace IacAdventure.Gameplay.Items
 
 		[SerializeField] private Animation _animation;
 		
-		[SerializeField] private InventoryItemType _inventoryItemType;
-		
 		#endregion
 		
 		#region Fields
@@ -26,12 +24,6 @@ namespace IacAdventure.Gameplay.Items
 			if (_isCollected)
 			{
 				return;
-			}
-
-			_animation.Play();
-			if (_inventoryItemType != InventoryItemType.Undefined)
-			{
-				GameInventory.Instance.PutItem(_inventoryItemType);
 			}
 		}
 		
