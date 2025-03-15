@@ -190,10 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2be4a2ea2e44ec9450320758788f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _experiencePoints: 15
-  _goldAmount: 100
-  _gemsAmount: 15
-  _openLidAnimation: {fileID: 4132895845903121049}
+  _animation: {fileID: 0}
+  _inventoryItemType: 0
 --- !u!65 &8050475010426303066
 BoxCollider:
   m_ObjectHideFlags: 0

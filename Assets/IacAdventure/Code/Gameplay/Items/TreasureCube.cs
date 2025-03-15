@@ -1,4 +1,3 @@
-using IacAdventure.Gameplay.Inventory;
 using UnityEngine;
 
 namespace IacAdventure.Gameplay.Items
