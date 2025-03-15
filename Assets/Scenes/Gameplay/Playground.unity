@@ -1062,6 +1062,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+      propertyPath: _flySpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _animation
       value: 
       objectReference: {fileID: 604661938}
@@ -1301,6 +1305,10 @@ PrefabInstance:
     - target: {fileID: 3593741239342152002, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+      propertyPath: _flySpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _animation
@@ -1690,6 +1698,10 @@ PrefabInstance:
     - target: {fileID: 4564404358425467591, guid: f16b4886446ee4b98936e4707da846c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701591102390238690, guid: f16b4886446ee4b98936e4707da846c2, type: 3}
+      propertyPath: _flySpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2473,6 +2485,10 @@ PrefabInstance:
     - target: {fileID: 3593741239342152002, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+      propertyPath: _flySpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _animation

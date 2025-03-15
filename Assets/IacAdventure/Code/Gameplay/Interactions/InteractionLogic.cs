@@ -15,8 +15,6 @@ namespace IacAdventure.Gameplay.Interactions
 
 		[SerializeField] private ThirdPersonController _characterController;
 
-		[SerializeField] private InventoryInteractionParams _inventoryInteractionParams;
-		
 		#endregion
 
 		#region Fields
