@@ -56,17 +56,7 @@ namespace IacAdventure.Gameplay.Inventory
 
 			return result;
 		}
-
-		public GameObject CreateItemPrefab(InventoryItemType itemType, Vector3 position, Quaternion rotation)
-		{
-			var info = GetItemInfo(itemType);
-			if (info.Prefab == null)
-			{
-				return null;
-			}
-			return Instantiate(info.Prefab, position, rotation);
-		}
-
+		
 		#endregion
 	}
 }

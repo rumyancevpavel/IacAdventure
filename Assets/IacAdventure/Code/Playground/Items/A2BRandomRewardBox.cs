@@ -1,5 +1,3 @@
-using System.Collections;
-using IacAdventure.Gameplay.Tools;
 using UnityEngine;
 
 namespace IacAdventure.Playground.Items
@@ -13,14 +11,12 @@ namespace IacAdventure.Playground.Items
 		
 		public void Interact()
 		{
-			var item = CreateRandomItem();
-			StartCoroutine(A2bHelper.FlyToTargetCoroutine(item, _a2bCollectItemTarget, _speed));
 		}
 
-		private GameObject CreateRandomItem()
+		private GameObject CreateRandomItem(Vector3 atPosition)
 		{
 			var prefabRef = _prefabRefs[Random.Range(0, _prefabRefs.Length)];
-			return Instantiate(prefabRef, _a2bCollectItemStart.position, Quaternion.identity);
+			return Instantiate(prefabRef, atPosition, Quaternion.identity);
 		}
 	}
 }

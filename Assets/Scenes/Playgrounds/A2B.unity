@@ -469,24 +469,24 @@ PrefabInstance:
       objectReference: {fileID: 22215895}
     - target: {fileID: 68730637480930551, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: _prefabRefs.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 68730637480930551, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: '_prefabRefs.Array.data[0]'
       value: 
-      objectReference: {fileID: 1174841136242008, guid: 8d7272bfa510e464b89d3d74b6cc13a0, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 68730637480930551, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: '_prefabRefs.Array.data[1]'
       value: 
-      objectReference: {fileID: 1994167017423174, guid: 5ac43cab85fbd4edd8b5f6e31e52dbd1, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 68730637480930551, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: '_prefabRefs.Array.data[2]'
       value: 
-      objectReference: {fileID: 1505379992639428441, guid: fb30a543e5a5c40ff9acff74b1f275de, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 68730637480930551, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: '_prefabRefs.Array.data[3]'
       value: 
-      objectReference: {fileID: 1325437523561550, guid: f0648b9ba15fa4851883c7f51fa47d68, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2856750962683406684, guid: 4db5408b2bbe641ab84af9f354b7aa3b, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.size
       value: 1
