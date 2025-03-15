@@ -9,5 +9,7 @@ namespace IacAdventure.Gameplay.Inventory
 		public InventoryItemType Type;
 		public Sprite Icon;
 		public GameObject Prefab;
+
+		public bool Has3dPrefab => Prefab != null;
 	}
 }

@@ -14,6 +14,8 @@ namespace IacAdventure.Gameplay.Interactions
 		[SerializeField] private LayerMask _raycastLayerMask;
 
 		[SerializeField] private ThirdPersonController _characterController;
+
+		[SerializeField] private InventoryInteractionParams _inventoryInteractionParams;
 		
 		#endregion
 

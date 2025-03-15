@@ -1,3 +1,4 @@
+using IacAdventure.Gameplay.Interactions;
 using IacAdventure.Gameplay.Inventory;
 using UnityEngine;
 
