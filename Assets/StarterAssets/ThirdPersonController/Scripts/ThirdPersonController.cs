@@ -160,10 +160,19 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
-
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Interaction();
+        }
+
+        private void Interaction()
+        {
+            if (_input.interactionRequested)
+            {
+                InteractionRequested.Invoke();
+                _input.interactionRequested = false;
+            }
         }
 
         private void LateUpdate()
@@ -317,13 +326,7 @@ namespace StarterAssets
                     }
                 }
 
-                // Interacted
-                if (_input.interactionRequested)
-                {
-                    InteractionRequested.Invoke();
-                    _input.interactionRequested = false;
-                }
-
+                
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)
                 {

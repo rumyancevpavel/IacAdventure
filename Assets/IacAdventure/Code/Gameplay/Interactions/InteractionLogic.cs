@@ -8,13 +8,13 @@ namespace IacAdventure.Gameplay.Interactions
 		#region Editor Exposed
 
 		[SerializeField] private Transform _raycastCube;
-		
+
 		[SerializeField] private Mesh _raycastCubeMesh;
-		
+
 		[SerializeField] private LayerMask _raycastLayerMask;
 
 		[SerializeField] private ThirdPersonController _characterController;
-		
+
 		#endregion
 
 		#region Fields
@@ -24,14 +24,19 @@ namespace IacAdventure.Gameplay.Interactions
 		private bool _isHitDetected;
 
 		private RaycastHit _lastHit;
-		
+
 		#endregion
-		
+
 		#region Methods
 
-		private void Awake()
+		private void OnEnable()
 		{
 			_characterController.InteractionRequested.AddListener(OnInteractionRequested);
+		}
+
+		private void OnDisable()
+		{
+			_characterController.InteractionRequested.RemoveListener(OnInteractionRequested);
 		}
 
 		private void OnInteractionRequested()
@@ -64,7 +69,16 @@ namespace IacAdventure.Gameplay.Interactions
 
 		private void SetCurrentHighlight(Collider collider)
 		{
-			_currentInteractable = collider.GetComponent<Interacrtable>();
+			var interacrtable = collider.GetComponent<Interacrtable>();
+			if (interacrtable == null)
+			{
+				return;
+			}
+			if (_currentInteractable == interacrtable)
+			{
+				return;
+			}
+			_currentInteractable = interacrtable;
 			if (_currentInteractable != null)
 			{
 				_currentInteractable.SetHighlighted();
