@@ -13,6 +13,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 		[SerializeField] private AnimationClip _showClip;
 		[SerializeField] private AnimationClip _hideClip;
 		[SerializeField] private Camera _lockMechanicsCamera;
+		[SerializeField] private LayerMask _raycastingLayerMask;
 
 		#endregion
 
@@ -30,6 +31,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			_animation.Stop();
 			_animation.clip = _showClip;
 			_animation.Play();
+			Cursor.lockState = CursorLockMode.None;
 			_isWorking = true;
 		}
 
@@ -39,6 +41,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			_animation.Stop();
 			_animation.clip = _hideClip;
 			_animation.Play();
+			Cursor.lockState = CursorLockMode.Locked;
 			_isWorking = false;
 		}
 
