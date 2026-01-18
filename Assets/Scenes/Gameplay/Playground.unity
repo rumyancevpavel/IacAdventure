@@ -453,6 +453,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 572167671}
+    - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572167672}
   m_SourcePrefab: {fileID: 100100000, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
 --- !u!4 &572167665 stripped
 Transform:
@@ -527,7 +530,20 @@ MonoBehaviour:
         m_CallState: 2
   _onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 572167672}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockDrum,
+          Assembly-CSharp
+        m_MethodName: SpinToNextNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &572167671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -549,6 +565,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8477631, y: 1.8477626, z: 0.6021273}
   m_Center: {x: 0, y: 0, z: -0.0000038146973}
+--- !u!114 &572167672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572167666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
+  OnDrumSpinEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1826820349}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
+          Assembly-CSharp
+        m_MethodName: OnDrumSpinEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!111 &604661938 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 4132895845903121049, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
@@ -1629,6 +1673,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1316485918}
+    - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1316485919}
   m_SourcePrefab: {fileID: 100100000, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
 --- !u!4 &1316485912 stripped
 Transform:
@@ -1703,7 +1750,20 @@ MonoBehaviour:
         m_CallState: 2
   _onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1316485919}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockDrum,
+          Assembly-CSharp
+        m_MethodName: SpinToNextNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1316485918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1725,6 +1785,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8477631, y: 1.8477626, z: 0.6021273}
   m_Center: {x: 0, y: 0, z: -0.0000038146973}
+--- !u!114 &1316485919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316485913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
+  OnDrumSpinEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1826820349}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
+          Assembly-CSharp
+        m_MethodName: OnDrumSpinEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1872,6 +1960,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1746935908}
+    - targetCorrespondingSourceObject: {fileID: 7985417554378954498, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1746935909}
   m_SourcePrefab: {fileID: 100100000, guid: fe8ed8291a9584df8a60c36d50a0bcf7, type: 3}
 --- !u!4 &1746935902 stripped
 Transform:
@@ -1946,7 +2037,20 @@ MonoBehaviour:
         m_CallState: 2
   _onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1746935909}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockDrum,
+          Assembly-CSharp
+        m_MethodName: SpinToNextNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1746935908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1968,6 +2072,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8477631, y: 1.8477626, z: 0.6021273}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1746935909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746935903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
+  OnDrumSpinEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1826820349}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
+          Assembly-CSharp
+        m_MethodName: OnDrumSpinEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1754819920
 GameObject:
   m_ObjectHideFlags: 0

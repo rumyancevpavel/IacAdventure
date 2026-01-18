@@ -23,9 +23,9 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 		#region Fields
 
 		private bool _isWorking;
+		
 		private Interacrtable _currentInteractable;
 
-		
 		#endregion
 		
 		#region Methods
@@ -58,15 +58,19 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			{
 				return;
 			}
-			var ray = _lockMechanicsCamera.ScreenPointToRay(Input.mousePosition);
 			ClearCurrentHighlight();
+			var ray = _lockMechanicsCamera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out RaycastHit hit, _raycastingLayerMask))
 			{
 				var interactable = hit.collider.GetComponent<Interacrtable>();
 				if (interactable != null)
 				{
-					_currentInteractable = interactable;
-					_currentInteractable.SetHighlighted();
+					SetCurrentHighlight(interactable);
+				}
+
+				if (Input.GetMouseButtonDown(0) && _currentInteractable != null)
+				{
+					_currentInteractable.Interact();
 				}
 			}
 		}
@@ -78,6 +82,16 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 				_currentInteractable.ClearHighlighted();
 				_currentInteractable = null;
 			}
+		}
+
+		private void SetCurrentHighlight(Interacrtable  interactable)
+		{
+			_currentInteractable = interactable;
+			_currentInteractable.SetHighlighted();
+		}
+
+		public void OnDrumSpinEnd()
+		{
 		}
 
 		#endregion
