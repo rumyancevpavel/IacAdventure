@@ -1,4 +1,6 @@
 using System;
+using IacAdventure.Gameplay.Interactions;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,13 +16,16 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 		[SerializeField] private AnimationClip _hideClip;
 		[SerializeField] private Camera _lockMechanicsCamera;
 		[SerializeField] private LayerMask _raycastingLayerMask;
+		[SerializeField] private StarterAssetsInputs _inputs;
 
 		#endregion
 
 		#region Fields
 
 		private bool _isWorking;
+		private Interacrtable _currentInteractable;
 
+		
 		#endregion
 		
 		#region Methods
@@ -31,6 +36,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			_animation.Stop();
 			_animation.clip = _showClip;
 			_animation.Play();
+			_inputs.cursorLocked = false;
 			Cursor.lockState = CursorLockMode.None;
 			_isWorking = true;
 		}
@@ -41,6 +47,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			_animation.Stop();
 			_animation.clip = _hideClip;
 			_animation.Play();
+			_inputs.cursorLocked = true;
 			Cursor.lockState = CursorLockMode.Locked;
 			_isWorking = false;
 		}
@@ -51,7 +58,26 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			{
 				return;
 			}
-			
+			var ray = _lockMechanicsCamera.ScreenPointToRay(Input.mousePosition);
+			ClearCurrentHighlight();
+			if (Physics.Raycast(ray, out RaycastHit hit, _raycastingLayerMask))
+			{
+				var interactable = hit.collider.GetComponent<Interacrtable>();
+				if (interactable != null)
+				{
+					_currentInteractable = interactable;
+					_currentInteractable.SetHighlighted();
+				}
+			}
+		}
+
+		private void ClearCurrentHighlight()
+		{
+			if (_currentInteractable != null)
+			{
+				_currentInteractable.ClearHighlighted();
+				_currentInteractable = null;
+			}
 		}
 
 		#endregion
