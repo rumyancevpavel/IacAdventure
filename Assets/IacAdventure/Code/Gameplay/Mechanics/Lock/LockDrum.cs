@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,7 +35,22 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 
 		public void SpinToNextNumber()
 		{
-			transform.Rotate(0,0, SINGLE_NUMBER_ROTATION);
+			StartCoroutine(SpinCoroutine());
+		}
+
+		private IEnumerator SpinCoroutine()
+		{
+			for (var i = 1; i <= SINGLE_NUMBER_ROTATION; i++)
+			{
+				transform.Rotate(0,0, 1);
+				yield return null;
+			}
+			OnDrumSpinEnd?.Invoke();
+		}
+
+		public int GetCurrentNumber()
+		{
+			return Mathf.RoundToInt(transform.rotation.eulerAngles.z / SINGLE_NUMBER_ROTATION) + 1;
 		}
 
 		#endregion

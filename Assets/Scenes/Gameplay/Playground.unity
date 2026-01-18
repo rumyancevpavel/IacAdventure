@@ -2474,6 +2474,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _inputs: {fileID: 1762682268}
+  _lockDrums:
+  - {fileID: 1746935909}
+  - {fileID: 1316485919}
+  - {fileID: 572167672}
 --- !u!111 &1826820350
 Animation:
   m_ObjectHideFlags: 0

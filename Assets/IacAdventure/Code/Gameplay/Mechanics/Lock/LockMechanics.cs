@@ -17,6 +17,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 		[SerializeField] private Camera _lockMechanicsCamera;
 		[SerializeField] private LayerMask _raycastingLayerMask;
 		[SerializeField] private StarterAssetsInputs _inputs;
+		[SerializeField] private LockDrum[] _lockDrums;
 
 		#endregion
 
@@ -92,6 +93,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 
 		public void OnDrumSpinEnd()
 		{
+			Debug.Log($"Code: {_lockDrums[0].GetCurrentNumber()}-{_lockDrums[1].GetCurrentNumber()}-{_lockDrums[2].GetCurrentNumber()}");
 		}
 
 		#endregion
