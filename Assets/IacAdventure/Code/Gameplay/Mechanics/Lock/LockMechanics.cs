@@ -2,6 +2,7 @@ using System;
 using IacAdventure.Gameplay.Interactions;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace IacAdventure.Gameplay.Mechanics.Lock
@@ -10,6 +11,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 	{
 		#region Inspector
 
+		[SerializeField] private UnityEvent OnCodeSuccess;
 		[SerializeField] private PlayerInput _playerInput;
 		[SerializeField] private Animation _animation;
 		[SerializeField] private AnimationClip _showClip;
@@ -24,15 +26,16 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 		#region Fields
 
 		private bool _isWorking;
-		
 		private Interacrtable _currentInteractable;
+		private string _code;
 
 		#endregion
 		
 		#region Methods
 
-		public void Show()
+		public void Show(string code)
 		{
+			_code = code;
 			_playerInput.DeactivateInput();
 			_animation.Stop();
 			_animation.clip = _showClip;
@@ -74,6 +77,11 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 					_currentInteractable.Interact();
 				}
 			}
+
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				Hide();
+			}
 		}
 
 		private void ClearCurrentHighlight()
@@ -93,7 +101,12 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 
 		public void OnDrumSpinEnd()
 		{
-			Debug.Log($"Code: {_lockDrums[0].GetCurrentNumber()}-{_lockDrums[1].GetCurrentNumber()}-{_lockDrums[2].GetCurrentNumber()}");
+			var codeOnLock = $"{_lockDrums[0].GetCurrentNumber()}{_lockDrums[1].GetCurrentNumber()}{_lockDrums[2].GetCurrentNumber()}";
+			if (codeOnLock == _code)
+			{
+				Debug.Log("OnCodeSuccess");
+				OnCodeSuccess?.Invoke();
+			}
 		}
 
 		#endregion

@@ -27,7 +27,7 @@ namespace IacAdventure.Gameplay.Items
 			{
 				return;
 			}
-			_lockMechanics.Show();
+			_lockMechanics.Show(_code);
 		}
 
 		#endregion
