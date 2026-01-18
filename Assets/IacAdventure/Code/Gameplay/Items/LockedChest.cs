@@ -1,16 +1,18 @@
-using IacAdventure.Gameplay.Inventory;
+using IacAdventure.Gameplay.Mechanics.Lock;
 using UnityEngine;
 
 namespace IacAdventure.Gameplay.Items
 {
-	public class TreasureGoldChest : MonoBehaviour
+	public class LockedChest : MonoBehaviour
 	{
-		#region Editor Exposed
+		#region Inspector
 
+		[SerializeField] private string _code = "111";
+		[SerializeField] private LockMechanics _lockMechanics;
 		[SerializeField] private Animation _animation;
-		
+
 		#endregion
-		
+
 		#region Fields
 
 		private bool _isCollected;
@@ -25,11 +27,9 @@ namespace IacAdventure.Gameplay.Items
 			{
 				return;
 			}
-
-			_animation.Play();
-			_isCollected = true;
+			_lockMechanics.Show();
 		}
-		
+
 		#endregion
 	}
 }
