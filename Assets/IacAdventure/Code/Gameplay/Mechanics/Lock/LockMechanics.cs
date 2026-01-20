@@ -11,7 +11,8 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 	{
 		#region Inspector
 
-		[SerializeField] private UnityEvent OnCodeSuccess;
+		[SerializeField] public UnityEvent OnCodeSuccess;
+		[SerializeField] public UnityEvent OnCodeFail;
 		[SerializeField] private PlayerInput _playerInput;
 		[SerializeField] private Animation _animation;
 		[SerializeField] private AnimationClip _showClip;
@@ -81,6 +82,7 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
 				Hide();
+				OnCodeFail?.Invoke();
 			}
 		}
 
@@ -101,10 +103,14 @@ namespace IacAdventure.Gameplay.Mechanics.Lock
 
 		public void OnDrumSpinEnd()
 		{
-			var codeOnLock = $"{_lockDrums[0].GetCurrentNumber()}{_lockDrums[1].GetCurrentNumber()}{_lockDrums[2].GetCurrentNumber()}";
+			var codeOnLock = string.Format("{0}{1}{2}",
+				_lockDrums[0].GetCurrentNumber(),
+				_lockDrums[1].GetCurrentNumber(),
+				_lockDrums[2].GetCurrentNumber());
+			
 			if (codeOnLock == _code)
 			{
-				Debug.Log("OnCodeSuccess");
+				Hide();
 				OnCodeSuccess?.Invoke();
 			}
 		}

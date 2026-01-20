@@ -1201,14 +1201,14 @@ PrefabInstance:
     - target: {fileID: 1631731930273005441, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1755571403}
+      objectReference: {fileID: 1755571398}
     - target: {fileID: 1631731930273005441, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Collect
+      value: TryUnlock
       objectReference: {fileID: 0}
     - target: {fileID: 1631731930273005441, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: IacAdventure.Gameplay.Items.LockedChest, Assembly-CSharp
+      value: IacAdventure.Gameplay.Mechanics.Lock.LockedByLock, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3590094242452899340, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: m_Layer
@@ -1278,20 +1278,30 @@ PrefabInstance:
       propertyPath: _inventoryItemType
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3590549513302979694, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1755571403}
+      insertIndex: -1
+      addedObject: {fileID: 1755571398}
   m_SourcePrefab: {fileID: 100100000, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
 --- !u!111 &908548454 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 4132895845903121049, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
   m_PrefabInstance: {fileID: 908548453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &908548455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+  m_PrefabInstance: {fileID: 908548453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755571397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2be4a2ea2e44ec9450320758788f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1028513131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1314427565
 Transform:
   m_ObjectHideFlags: 0
@@ -2194,7 +2204,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3590549513302979694, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
   m_PrefabInstance: {fileID: 908548453}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1755571403
+--- !u!114 &1755571398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2203,12 +2213,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755571397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e2707cef02494ba61438938b0f402a, type: 3}
+  m_Script: {fileID: 11500000, guid: ef990a5136374568bbf78399b22350b0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Items.LockedChest
+  m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockedByLock
   _code: 111
   _lockMechanics: {fileID: 1826820349}
-  _animation: {fileID: 908548454}
+  Unlocked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 908548455}
+        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Items.TreasureGoldChest,
+          Assembly-CSharp
+        m_MethodName: Collect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1762682258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2465,6 +2490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a9928b0beb4ec08f567a762342115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockMechanics
+  OnCodeSuccess:
+    m_PersistentCalls:
+      m_Calls: []
   _playerInput: {fileID: 1762682267}
   _animation: {fileID: 1826820350}
   _showClip: {fileID: 7400000, guid: 984d4afd4aea247699010c3b81b8c9ea, type: 2}
