@@ -2493,6 +2493,9 @@ MonoBehaviour:
   OnCodeSuccess:
     m_PersistentCalls:
       m_Calls: []
+  OnCodeFail:
+    m_PersistentCalls:
+      m_Calls: []
   _playerInput: {fileID: 1762682267}
   _animation: {fileID: 1826820350}
   _showClip: {fileID: 7400000, guid: 984d4afd4aea247699010c3b81b8c9ea, type: 2}
