@@ -577,22 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
-  OnDrumSpinEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826820349}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
-          Assembly-CSharp
-        m_MethodName: OnDrumSpinEnd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!111 &604661938 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 4132895845903121049, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
@@ -1199,6 +1183,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1631731930273005441, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
+      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631731930273005441, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1755571398}
@@ -1291,17 +1279,6 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 4132895845903121049, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
   m_PrefabInstance: {fileID: 908548453}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &908548455 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8525554016745450135, guid: 00f5e3117ebb645a08087c1ce2b6056f, type: 3}
-  m_PrefabInstance: {fileID: 908548453}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755571397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2be4a2ea2e44ec9450320758788f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1028513131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,8 +1518,7 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras:
-  - {fileID: 804622043}
+  m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -1807,22 +1783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
-  OnDrumSpinEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826820349}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
-          Assembly-CSharp
-        m_MethodName: OnDrumSpinEnd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2047,20 +2007,7 @@ MonoBehaviour:
         m_CallState: 2
   _onInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1746935909}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockDrum,
-          Assembly-CSharp
-        m_MethodName: SpinToNextNumber
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!65 &1746935908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2094,22 +2041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df60b7c8ed304fac9281f0f00046b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockDrum
-  OnDrumSpinEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826820349}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Mechanics.Lock.LockMechanics,
-          Assembly-CSharp
-        m_MethodName: OnDrumSpinEnd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1754819920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,22 +2149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockedByLock
   _code: 111
   _lockMechanics: {fileID: 1826820349}
-  Unlocked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 908548455}
-        m_TargetAssemblyTypeName: IacAdventure.Gameplay.Items.TreasureGoldChest,
-          Assembly-CSharp
-        m_MethodName: Collect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1762682258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2356,28 +2271,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _characterController: {fileID: 1762682262}
---- !u!114 &1762682267 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4416926081852918493, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-  m_PrefabInstance: {fileID: 1762682258}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469202820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1762682268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 135756642000475821, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-  m_PrefabInstance: {fileID: 1762682258}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469202820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e087ecce43ebbff45a1b360637807d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,25 +2383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a9928b0beb4ec08f567a762342115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IacAdventure.Gameplay.Mechanics.Lock.LockMechanics
-  OnCodeSuccess:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCodeFail:
-    m_PersistentCalls:
-      m_Calls: []
-  _playerInput: {fileID: 1762682267}
-  _animation: {fileID: 1826820350}
-  _showClip: {fileID: 7400000, guid: 984d4afd4aea247699010c3b81b8c9ea, type: 2}
-  _hideClip: {fileID: 7400000, guid: 928f537e61e7b4b90bf154df8526e698, type: 2}
-  _lockMechanicsCamera: {fileID: 804622043}
-  _raycastingLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _inputs: {fileID: 1762682268}
-  _lockDrums:
-  - {fileID: 1746935909}
-  - {fileID: 1316485919}
-  - {fileID: 572167672}
 --- !u!111 &1826820350
 Animation:
   m_ObjectHideFlags: 0
